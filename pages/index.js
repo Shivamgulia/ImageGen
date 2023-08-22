@@ -2,48 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
+import Loader from '../components/Loaders/Loader';
+import GenImageForm from '../components/Main/GenImageForm';
 
 export default function Home() {
-  const [image, setImage] = useState(null);
-  const [imageU, setImageU] = useState(null);
-
-  async function getImage() {
-    async function query(data) {
-      const response = await fetch(
-        'https://api-inference.huggingface.co/models/minimaxir/sdxl-wrong-lora',
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_HUGKEY}`,
-          },
-          method: 'POST',
-          body: JSON.stringify(data),
-        }
-      );
-      const result = await response.blob();
-      return result;
-    }
-    const response = await query({ inputs: 'dog' });
-    console.log(response);
-    setImage(response);
-  }
-
-  function preview() {
-    var imageBlob = image; // Your Blob
-    var filename = 'myimage.jpg';
-
-    // Create a URL for the Blob
-    var imageUrl = null;
-
-    try {
-      imageUrl = URL.createObjectURL(imageBlob);
-    } catch (error) {
-      console.error('Error creating Object URL:', error);
-    }
-
-    // Set the src attribute of the img element to the Blob URL
-    setImageU(imageUrl);
-  }
-
   return (
     <div className={styles.container}>
       <Head>
@@ -52,14 +14,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <button onClick={getImage}> get </button>
-      <button onClick={preview}> preview </button>
-
-      {imageU && (
-        <span className={styles.logo}>
-          <img src={imageU} id='imageElement' alt='Image' width={100} />
-        </span>
-      )}
+      <GenImageForm />
     </div>
   );
 }
