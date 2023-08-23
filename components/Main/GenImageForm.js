@@ -50,7 +50,7 @@ function GenImageForm() {
   return (
     <div className={`${styles.cont}`}>
       <form onSubmit={getImage} className={`${styles.form}`}>
-        <div class={`${styles.inputBox}`}>
+        <div className={`${styles.container}`}>
           <input
             type='text'
             name='prompt'
@@ -61,19 +61,26 @@ function GenImageForm() {
             className={`${styles.input}`}
             required
           />
-          <span>Descreption</span>
+          <label className={`${styles.label}`}>Image Descreption</label>
         </div>
         {!loading && (
-          <button type='submit' className={`${styles.Btn}`}>
+          <button type='submit' className={`${styles.button}`}>
             Generate Image
           </button>
         )}
       </form>
       {loading && <Loader />}
-      <button onClick={preview} className={`${styles.preButton}`}>
-        {' '}
-        preview{' '}
-      </button>
+
+      {image && (
+        <div className={`${styles.preButton}`}>
+          <button onClick={preview} className={`${styles.pbutton}`}>
+            Preview
+          </button>
+          <a href={imageU} target='blank' className={`${styles.pbutton}`}>
+            Download
+          </a>
+        </div>
+      )}
 
       {imageU && (
         <span className={styles.logo}>
