@@ -8,7 +8,7 @@ import Footer from './Footer';
 // import '../css/embla.css';
 
 const OPTIONS = { loop: true };
-const SLIDE_COUNT = 5;
+const SLIDE_COUNT = 10;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const App = () => {

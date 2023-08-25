@@ -13,7 +13,7 @@
   place-items: center;
   grid-template-columns: 80vw;
   justify-content: space-around;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 .container {
