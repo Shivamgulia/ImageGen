@@ -21,7 +21,9 @@ function Main() {
           <h1>WordArtGen</h1>
         </motion.div>
         <div className={`${styles.buttonDiv}`}>
-          <Link className={`${styles.LinkButton}`}>Try For Your Self</Link>
+          <Link href='/generate' className={`${styles.LinkButton}`}>
+            Try For Your Self
+          </Link>
         </div>
         <Sliders />
       </div>

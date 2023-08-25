@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Image from 'next/Image';
+import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Thumb } from './EmblaCarouselThumbsButton';
 import imageByIndex from './imageByIndex';
