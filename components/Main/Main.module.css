@@ -1,0 +1,29 @@
+.Cont {
+  display: grid;
+  place-items: center;
+}
+
+.HeadCont {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 200px;
+}
+
+.buttonDiv {
+  display: grid;
+}
+
+.LinkButton {
+  border: none;
+  background-color: inherit;
+  color: white;
+  padding: 30px 50px;
+  transition: all 0.5s;
+  font-size: 50px;
+}
+
+.LinkButton:hover {
+  background-color: white;
+  color: black;
+}
